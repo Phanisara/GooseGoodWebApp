@@ -4,6 +4,9 @@ import backIcon from './pics/returnIcon.png'
 import suggestIcon from './pics/star.png'
 import GaugeChart from "react-gauge-chart";
 
+import Axios from 'axios';
+import { useState, useEffect } from 'react';
+
 function FarmSpinach () {
     const chartStyle = {
       width: '280px',
@@ -11,6 +14,21 @@ function FarmSpinach () {
       fontFamily: 'Prompt',
       fontWeight: 'bold',
     }
+
+    const [sensorList, setSensorList] = useState([]);
+
+    useEffect(() => {
+      setInterval(() => {Axios.get('http://localhost:3001/ValueSensorFarm3').then((response) => {
+        let count = 0;
+        console.log(response.data);  
+        if (response.data.length > 0) {
+          count = response.data.length - 1;
+        };
+        console.log(count);
+        setSensorList([response.data[count]]);
+      })}, 10000);
+
+    }, []);
 
     return (
         <div className = {classes.header}>
@@ -54,59 +72,75 @@ function FarmSpinach () {
               <p className={classes.detailTopic}>รายละเอียดของค่าที่วัดได้</p>
               <div className={classes.moisSoil}>
                 <p>ค่าความชื้นในดิน</p>
-                <GaugeChart 
-                  style = {chartStyle}
-                  id="gauge_soilCan"
-                  nrOfLevels={3}
-                  colors={["#06753e", "#ffaf47", "#d43535"]}
-                  arcWidth={0.3}
-                  percent={0.45}
-                  textColor={'rgb(49, 49, 49)'}
-                  hideText={true}
-                />
-                <div className={classes.per}>45%</div>
+                {sensorList.map((val, key) => (
+                  <div key={key}>
+                    <GaugeChart 
+                      style = {chartStyle}
+                      id="gauge_lightCan"
+                      nrOfLevels={3}
+                      colors={["#06753e", "#ffaf47", "#d43535"]}
+                      arcWidth={0.3}
+                      percent={val.moistSoil/100}
+                      textColor={'rgb(49, 49, 49)'}
+                      hideText={true}
+                    />
+                    <div className={classes.per}>{val.moistSoil} %</div>
+                  </div>
+                ))}
               </div>
               <div className={classes.humidity}>
                 <p>ค่าความชื้นในอากาศ</p>
-                <GaugeChart 
-                    style = {chartStyle}
-                    id="gauge_humidCan"
-                    nrOfLevels={3}
-                    colors={["#06753e", "#ffaf47", "#d43535"]}
-                    arcWidth={0.3}
-                    percent={0.45}
-                    textColor={'rgb(49, 49, 49)'}
-                    hideText={true}
-                />    
-                <div className={classes.per}>45%</div>            
+                  {sensorList.map((val, key) => (
+                    <div key={key}>
+                      <GaugeChart 
+                        style = {chartStyle}
+                        id="gauge_lightCan"
+                        nrOfLevels={3}
+                        colors={["#06753e", "#ffaf47", "#d43535"]}
+                        arcWidth={0.3}
+                        percent={val.humidity/100}
+                        textColor={'rgb(49, 49, 49)'}
+                        hideText={true}
+                      />
+                      <div className={classes.per}>{val.humidity} %</div>
+                    </div>
+                  ))}          
               </div>
               <div className={classes.temp}>
                 <p>อุณหภูมิ</p>
-                <GaugeChart 
-                    style = {chartStyle}
-                    id="gauge_tempCan"
-                    nrOfLevels={3}
-                    colors={["#06753e", "#ffaf47", "#d43535"]}
-                    arcWidth={0.3}
-                    percent={0.45}
-                    textColor={'rgb(49, 49, 49)'}
-                    hideText={true}
-                />  
-                <div className={classes.per}>45%</div>                
+                  {sensorList.map((val, key) => (
+                    <div key={key}>
+                      <GaugeChart 
+                        style = {chartStyle}
+                        id="gauge_lightCan"
+                        nrOfLevels={3}
+                        colors={["#06753e", "#ffaf47", "#d43535"]}
+                        arcWidth={0.3}
+                        percent={val.temperature/100}
+                        textColor={'rgb(49, 49, 49)'}
+                        hideText={true}
+                      />
+                      <div className={classes.per}>{val.temperature} %</div>
+                    </div>
+                  ))}           
               </div>
               <div className={classes.light}>
                 <p>ค่าความเข้มของแสงแดด</p>
-                <GaugeChart 
-                    style = {chartStyle}
-                    id="gauge_lightCan"
-                    nrOfLevels={3}
-                    colors={["#06753e", "#ffaf47", "#d43535"]}
-                    arcWidth={0.3}
-                    percent={0.45}
-                    textColor={'rgb(49, 49, 49)'}
-                    hideText={true}
-                />
-                <div className={classes.per}>45%</div>
+                  {sensorList.map((val, key) => (
+                    <div key={key}>
+                      <GaugeChart 
+                        style = {chartStyle}
+                        id="gauge_lightCan"
+                        nrOfLevels={3}
+                        colors={["#06753e", "#ffaf47", "#d43535"]}
+                        arcWidth={0.3}
+                        percent={val.light/100}
+                        textColor={'rgb(49, 49, 49)'}
+                        hideText={true}
+                      />
+                      <div className={classes.per}>{val.light} %</div>
+                    </div>
+                  ))}
               </div>
             </div>
         </div>

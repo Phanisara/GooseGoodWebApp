@@ -24,6 +24,28 @@ app.get('/ValueSensorFarm1', (req, res) => {
     });
 });
 
+app.get('/ValueSensorFarm2', (req, res) => {
+    db.query("SELECT * FROM sensorfarm2", (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/ValueSensorFarm3', (req, res) => {
+    db.query("SELECT * FROM sensorfarm3", (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+});
+
 app.listen('3001', () => {
     console.log('server is running on port 3001')
 })

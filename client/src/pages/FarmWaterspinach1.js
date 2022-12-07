@@ -16,29 +16,18 @@ function FarmWaterspinach () {
     }
 
     const [sensorList, setSensorList] = useState([]);
-    let count = 0;
-
-    // const getSensor = () => {
-    //   Axios.get('http://localhost:3001/ValueSensorFarm1').then((response) => {
-    //     console.log(response.data);
-    //     setSensorList(response.data);
-    //   });
-    //   return sensorList
-    // }
-   
-    // console.log(sensorList);
 
     useEffect(() => {
-      Axios.get('http://localhost:3001/ValueSensorFarm1').then((response) => {
-        console.log(response.data);
-        // setSensorList(response.data);
-
+      setInterval(() => {Axios.get('http://localhost:3001/ValueSensorFarm1').then((response) => {
+        let count = 0;
+        console.log(response.data);  
         if (response.data.length > 0) {
           count = response.data.length - 1;
         };
         console.log(count);
         setSensorList([response.data[count]]);
-      });
+      })}, 10000);
+
     }, []);
 
     return (
