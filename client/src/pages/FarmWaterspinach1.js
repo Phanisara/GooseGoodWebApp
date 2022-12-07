@@ -37,6 +37,7 @@ function FarmWaterspinach () {
           count = response.data.length - 1;
         };
         console.log(count);
+        setSensorList([response.data[count]]);
       });
     }, []);
 
