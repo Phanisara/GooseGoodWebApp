@@ -1,0 +1,182 @@
+.title{
+    font-family: 'Prompt', sans-serif;
+}
+
+.box1 {
+  width: 250px;
+  height: 370px;
+  background-color: #E4E8C5;
+  opacity: 50%;
+  margin-top: 40px;
+  margin-left: 130px;
+  border-radius: 35px;
+}
+
+.circle1{
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #99CC66;
+  opacity: 50%;
+  margin-top: -350px;
+  margin-left: 205px;
+  border-radius: 100%;
+}
+
+.circle2{
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #99CC66;
+  opacity: 50%;
+  margin-top: -235px;
+  margin-left: 205px;
+  border-radius: 100%;
+}
+
+.circle3{
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #99CC66;
+  opacity: 50%;
+  margin-top: -120px;
+  margin-left: 205px;
+  border-radius: 100%;
+}
+
+.waterspinach1{
+  position:absolute;
+  width: 80px;
+  height: 80px;
+  margin-top: 25px;
+  margin-left: 220px;
+  z-index:1;
+}
+
+.cantonese1{
+  position:absolute;
+  width: 75px;
+  height: 75px;
+  margin-top: 150px;
+  margin-left: 215px;
+  z-index:1;
+}
+
+.spinach1{
+  position:absolute;
+  width: 85px;
+  height: 85px;
+  margin-top: 260px;
+  margin-left: 210px;
+  z-index:1;
+}
+
+.agricount1{
+  font-family: 'Prompt', sans-serif;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(36, 36, 36);
+  margin-left: 170px;
+  margin-top: 15px;
+}
+
+.plantname1{
+  font-family: 'Prompt', sans-serif;
+  position: absolute;
+  font-size: 15px;
+  color: rgb(75, 75, 75);
+  margin-left: 170px;
+  margin-top: 50px;
+}
+
+.circle4{
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #99CC66;
+  opacity: 50%;
+  margin-top: -350px;
+  margin-left: 570px;
+  border-radius: 100%;
+}
+
+.circle5{
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #99CC66;
+  opacity: 50%;
+  margin-top: -235px;
+  margin-left: 570px;
+  border-radius: 100%;
+}
+
+.circle6{
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #99CC66;
+  opacity: 50%;
+  margin-top: -120px;
+  margin-left: 570px;
+  border-radius: 100%;
+}
+
+.waterspinach2{
+  position:absolute;
+  width: 80px;
+  height: 80px;
+  margin-top: 25px;
+  margin-left: 585px;
+  z-index:1;
+}
+
+.cantonese2{
+  position:absolute;
+  width: 75px;
+  height: 75px;
+  margin-top: 150px;
+  margin-left: 580px;
+  z-index:1;
+}
+
+.spinach2{
+  position:absolute;
+  width: 85px;
+  height: 85px;
+  margin-top: 260px;
+  margin-left: 575px;
+  z-index:1;
+}
+
+.agricount2{
+  font-family: 'Prompt', sans-serif;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(36, 36, 36);
+  margin-left: 540px;
+  margin-top: 15px;
+}
+
+.plantname2{
+  font-family: 'Prompt', sans-serif;
+  position: absolute;
+  font-size: 15px;
+  color: rgb(75, 75, 75);
+  margin-left: 540px;
+  margin-top: 50px;
+}
+
+.box2 {
+  width: 250px;
+  height: 370px;
+  background-color: #E4E8C5;
+  opacity: 50%;
+  margin-top: -370px;
+  margin-left: 500px;
+  border-radius: 35px;
+}
+

@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  padding: 0;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-family: 'Prompt', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  margin-left: 7rem;
+  color: #1C2711;
+}
+
+iframe {
+  border: none;
+  margin-left: 13rem;
+}
+
+.contain {
+  font-family: 'Prompt', sans-serif;
+  font-size: 20px;
+  padding: 0;
+  margin-top: 100px;
+  margin-bottom: -40px;
+  background-color: #ffffff;
+}
+
+.bolded { 
+  font-weight: bold; 
+  margin-right: 20px;
+}
